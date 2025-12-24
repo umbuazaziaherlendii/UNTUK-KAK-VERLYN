@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Former Teens Member</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Dots navigation (kanan layar) -->
+  <nav id="dots-nav" class="dots-nav" aria-label="Navigasi halaman">
+    <!-- Dots akan diisi oleh JS -->
+  </nav>
+
+  <!-- Wrapper yang memanfaatkan scroll-snap -->
+  <main class="pages" id="pages">
+    <!-- HERO / Pembuka (halaman 1) -->
+    <section class="page hero" id="hero" data-title="Pembuka" style="background-image: url('assets/images/hero.jpg');" aria-hidden="false">
+      <div class="overlay"></div>
+      <div class="container hero-content">
+        <h1 class="hero-title">Teens Fam Alumni <span id="cgl-name">✨Verlyn✨</span></h1>
+        <p class="hero-sub">Our Journey, Our Memories, Our Stories</p>
+        <div class="hero-actions">
+          <button class="btn primary" id="start-journey">See the Journey</button>
+          <button class="btn ghost" id="hero-next" aria-label="Halaman berikutnya">See the Moments ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE / MOMENT (halaman 2) -->
+    <section class="page section" id="timeline" data-title="Momen & Perjalanan" aria-hidden="true">
+      <div class="container">
+        <h2 class="section-title">Our Moments</h2>
+        <div class="timeline">
+          <!-- Moment 1 -->
+          <article class="moment card" data-audio="assets/audio/moment1.mp3">
+            <div class="moment-media">
+              <img src="assets/images/moment1.jpg" alt="Moment 1" />
+            </div>
+            <div class="moment-body">
+              <h3 class="moment-title">Judul Momen 1</h3>
+              <p class="moment-date">2021 — 2022</p>
+              <p class="moment-desc">Cerita singkat tentang momen ini. Ganti teks ini dengan cerita nyata.</p>
+
+              <!-- Play / Pause button untuk backsound momen -->
+              <div class="audio-controls">
+                <button class="btn play-btn">Play ▶</button>
+                <span class="audio-status">00:00</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Moment 2 -->
+          <article class="moment card" data-audio="assets/audio/moment2.mp3">
+            <div class="moment-media">
+              <img src="assets/images/moment2.jpg" alt="Moment 2" />
+            </div>
+            <div class="moment-body">
+              <h3 class="moment-title">Judul Momen 2</h3>
+              <p class="moment-date">2022 — 2023</p>
+              <p class="moment-desc">Deskripsi singkat momen kedua. Ganti sesuai kebutuhan.</p>
+
+              <div class="audio-controls">
+                <button class="btn play-btn">Play ▶</button>
+                <span class="audio-status">00:00</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tambah moment lain dengan struktur yang sama -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PESAN & KESAN (halaman 3) -->
+    <section class="page section" id="messages" data-title="Pesan & Kesan" aria-hidden="true">
+      <div class="container">
+        <h2 class="section-title">What We Want to Say⁉️</h2>
+        <div class="messages-grid">
+          <div class="message card">
+            <h4 class="msg-author">Nama Anak 1</h4>
+            <p class="msg-text">isi pesan</p>
+          </div>
+          <div class="message card">
+            <h4 class="msg-author">Nama Anak 2</h4>
+            <p class="msg-text">isi pesan.</p>
+          </div>
+          <!-- Tambah pesan lain -->
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI FOTO (halaman 4) -->
+    <section class="page section" id="gallery" data-title="Galeri Foto" aria-hidden="true">
+      <div class="container">
+        <h2 class="section-title">Our Captures</h2>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="assets/images/gallery1.jpg" alt="Gallery 1" data-caption="Cerita kecil tentang foto 1" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/images/gallery2.jpg" alt="Gallery 2" data-caption="Cerita kecil tentang foto 2" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/images/gallery3.jpg" alt="Gallery 3" data-caption="Cerita kecil tentang foto 3" />
+          </figure>
+          <!-- Tambah foto sesuai kebutuhan -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PENUTUP (halaman 5) -->
+    <section class="page closing" id="closing" data-title="Penutup" aria-hidden="true">
+      <div class="container">
+        <h2>Thank you </h2><br>
+        <p class="closing-quote">"Teruslah melayani dengan hati menyala-nyala — See you in Youth ✨"</p><br>
+        <h1 class="closing-quote">Pengkhotbah 3:1</h1>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal untuk Galeri -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button id="modal-close" class="modal-close" aria-label="Tutup">&times;</button>
+      <img id="modal-img" src="" alt="" />
+      <p id="modal-caption"></p>
+    </div>
+  </div>
+
+  <!-- Shared audio element (dikelola lewat JS agar hanya satu audio aktif) -->
+  <audio id="shared-audio" preload="none"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
